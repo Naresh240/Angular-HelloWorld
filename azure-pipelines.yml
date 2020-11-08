@@ -29,3 +29,4 @@ steps:
       v1
 - script: |
     docker run --name angularHelloworld -p 4200:4200 -d naresh240/angularhelloworld:v1
+  displayName: 'Deploy as Docker Container'
