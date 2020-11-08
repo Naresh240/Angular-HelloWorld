@@ -27,3 +27,5 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: |
       v1
+- script: |
+    docker run --name angularHelloworld -p 4200:4200 -d naresh240/angularHelloworld:v1
