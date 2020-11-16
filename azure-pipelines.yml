@@ -27,6 +27,12 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: |
       v1
-- script: |
-    docker run --name angularHelloworld -p 4200:4200 -d naresh240/angularhelloworld:v1
-  displayName: 'Deploy as Docker Container'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'naresh-service-connection'
+    appType: 'webAppContainer'
+    WebAppName: 'test123456springboot'
+    DockerNamespace: 'naresh240.azurecr.io'
+    DockerRepository: 'angularhelloworld'
+    DockerImageTag: 'v1'
