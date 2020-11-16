@@ -30,7 +30,7 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'naresh-service-connection'
     appType: 'webAppContainer'
-    WebAppName: 'test123456springboot'
+    WebAppName: 'angular-demo-deploy'
     DockerNamespace: 'naresh240.azurecr.io'
     DockerRepository: 'angularhelloworld'
     DockerImageTag: $(Build.BuildId)
