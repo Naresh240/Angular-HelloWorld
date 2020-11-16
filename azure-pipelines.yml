@@ -21,12 +21,10 @@ steps:
   displayName: 'npm install and build'
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockerhub'
-    repository: 'naresh240/angularhelloworld'
+    containerRegistry: 'dockerACR'
+    repository: 'angularhelloworld'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: |
-      v1
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
@@ -35,4 +33,4 @@ steps:
     WebAppName: 'test123456springboot'
     DockerNamespace: 'naresh240.azurecr.io'
     DockerRepository: 'angularhelloworld'
-    DockerImageTag: 'v1'
+    DockerImageTag: $(Build.BuildId)
